@@ -1,5 +1,5 @@
-import 'package:flutter_assistant/GlobalDatas.dart';
-import 'package:flutter_assistant/Routes.dart';
+import 'package:flutter_assistant/global_datas.dart';
+import 'package:flutter_assistant/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         primaryColorLight: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        visualDensity: VisualDensity.comfortable,
       ),
       darkTheme: ThemeData.dark(),
       initialRoute: '/',

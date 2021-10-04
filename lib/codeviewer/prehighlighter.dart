@@ -1,4 +1,4 @@
-import 'package:flutter_assistant/GlobalDatas.dart';
+import 'package:flutter_assistant/global_datas.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:string_scanner/string_scanner.dart';
