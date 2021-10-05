@@ -1,3 +1,5 @@
+import 'package:flutter/rendering.dart';
+import 'package:flutter_assistant/gen/icons.g.dart';
 import 'package:flutter_assistant/routes.dart';
 import 'package:flutter_assistant/entity/widget_model.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +19,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     Widget body;
-    if(currentIndex==1){
-      body = Container();
-    }else{
+    if (currentIndex == 1) {
+      body = IconsList();
+    } else {
       body = WidgetList();
     }
     return Scaffold(
@@ -132,5 +134,63 @@ class WidgetList extends StatelessWidget {
 
   _onPressed(BuildContext context, int index) {
     Navigator.pushNamed(context, routes.keys.toList()[index + 1]);
+  }
+}
+
+class IconsList extends StatelessWidget {
+  const IconsList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: ListTile(
+            title: Text("PlatformAdaptiveIcons"),
+          ),
+        ),
+        SliverGrid.extent(
+          maxCrossAxisExtent: 64.0,
+          children: [
+            for (var item in myPlatformAdaptiveIcons)
+              IconButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(item[0])),
+                  );
+                },
+                icon: Icon(item[1]),
+              ),
+          ],
+        ),
+        SliverToBoxAdapter(
+          child: ListTile(
+            title: Text("Icons"),
+          ),
+        ),
+        SliverGrid.extent(
+          maxCrossAxisExtent: 64.0,
+          children: [
+            for (var item in myIcons)
+              IconButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(item[0]),
+                      action: SnackBarAction(
+                        label: "了解",
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                        },
+                      ),
+                    ),
+                  );
+                },
+                icon: Icon(item[1]),
+              ),
+          ],
+        ),
+      ],
+    );
   }
 }
