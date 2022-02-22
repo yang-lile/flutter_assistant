@@ -5619,7 +5619,6 @@ List<List> myIcons = [
   ['Icons.pie_chart', Icons.pie_chart],
   ['Icons.pie_chart_sharp', Icons.pie_chart_sharp],
   ['Icons.pie_chart_rounded', Icons.pie_chart_rounded],
-  ['Icons.pie_chart_outlined', Icons.pie_chart_outlined],
   ['Icons.pie_chart_outline', Icons.pie_chart_outline],
   ['Icons.pie_chart_outline_sharp', Icons.pie_chart_outline_sharp],
   ['Icons.pie_chart_outline_rounded', Icons.pie_chart_outline_rounded],
