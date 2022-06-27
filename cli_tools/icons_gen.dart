@@ -1,34 +1,53 @@
 import 'dart:io';
 
-main() {
+void main() {
   var directory = Directory.current;
-  var outDir = Directory(
-      "${directory.path}${Platform.pathSeparator}lib${Platform.pathSeparator}gen${Platform.pathSeparator}icons.g.dart");
-  var outFile = File(outDir.path);
+  final ps = Platform.pathSeparator;
+  final outDir = Directory(
+    '${directory.path}${ps}lib${ps}gen${ps}icons.g.dart',
+  );
+  final outFile = File(outDir.path);
 
   directory = Directory(
-      "${directory.path}${Platform.pathSeparator}assets${Platform.pathSeparator}source${Platform.pathSeparator}icons.dart");
-  var file = File(directory.path);
+    '${directory.path}${ps}assets${ps}source${ps}icons.dart',
+  );
+  final file = File(directory.path);
 
-  var stringBuffer = StringBuffer();
-  List<String> readAsLinesSync = file.readAsLinesSync();
-  String c = "";
+  final stringBuffer = StringBuffer();
+  final readAsLinesSync = file.readAsLinesSync();
+  var c = '';
 
-  stringBuffer.writeln("import 'package:flutter/material.dart';");
-  stringBuffer.writeln();
-  for (var item in readAsLinesSync) {
-    if (item.startsWith("class ")) {
-      c = item.split(" ")[1];
-      stringBuffer.writeln("List<List> my$c = [");
+  stringBuffer
+    ..writeln("import 'package:flutter/material.dart';")
+    ..writeln("import 'package:flutter_assistant/entity/icons_model.dart';")
+    ..writeln();
+  for (final item in readAsLinesSync) {
+    if (item.startsWith('class ')) {
+      c = item.split(' ')[1];
+      stringBuffer.write('List<IconsModel> my$c = ');
+      if (item.startsWith('class Icons')) {
+        stringBuffer.writeln('const ');
+      }
+      stringBuffer.writeln('[');
     }
-    if (item.startsWith("  IconData get ")) {
-      stringBuffer.writeln("  ['Icons.adaptive.${item.split(" ")[4]}', Icons.adaptive.${item.split(" ")[4]},],");
+    if (item.startsWith('  IconData get ')) {
+      stringBuffer.writeln(
+        '  IconsModel(\n'
+        "    'Icons.adaptive.${item.split(' ')[4]}',\n"
+        '    Icons.adaptive.${item.split(' ')[4]},\n'
+        '  ),',
+      );
     }
-    if (item.startsWith("  static const IconData ")) {
-      stringBuffer.writeln("  ['$c.${item.split(" ")[5]}', $c.${item.split(" ")[5]}],");
+    if (item.startsWith('  static const IconData ')) {
+      stringBuffer.writeln(
+        '  IconsModel(\n'
+        "    '$c.${item.split(' ')[5]}',\n"
+        '    $c.${item.split(' ')[5]},\n'
+        '  ),',
+      );
     }
-    if (item.startsWith("}")) {
-      stringBuffer.writeln("];");
+    if (item.startsWith('}')) {
+      stringBuffer.writeln('];');
     }
   }
   outFile.writeAsStringSync(stringBuffer.toString());
