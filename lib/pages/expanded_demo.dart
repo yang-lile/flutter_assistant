@@ -1,14 +1,15 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class ExpandedDemo extends StatelessWidget {
+  const ExpandedDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "ExpandedDemo",
-      body: Container(
-        child: Center(
-            child: Column(
+      appBarTitle: 'ExpandedDemo',
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Row(
@@ -19,10 +20,11 @@ class ExpandedDemo extends StatelessWidget {
                   color: Colors.yellow[500],
                 ),
                 Expanded(
-                    child: Container(
-                  height: 50,
-                  color: Colors.orange[400],
-                )),
+                  child: Container(
+                    height: 50,
+                    color: Colors.orange[400],
+                  ),
+                ),
                 Container(
                   width: 50,
                   height: 50,
@@ -30,23 +32,24 @@ class ExpandedDemo extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               children: <Widget>[
                 Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 50,
-                      color: Colors.yellow[500],
-                    )),
+                  child: Container(
+                    height: 50,
+                    color: Colors.yellow[500],
+                  ),
+                ),
                 Expanded(
-                    flex: 2,
-                    child: Container(
-                      height: 50,
-                      color: Colors.orange[400],
-                    )),
+                  flex: 2,
+                  child: Container(
+                    height: 50,
+                    color: Colors.orange[400],
+                  ),
+                ),
                 Expanded(
                   flex: 3,
                   child: Container(
@@ -57,7 +60,7 @@ class ExpandedDemo extends StatelessWidget {
               ],
             ),
           ],
-        )),
+        ),
       ),
     );
   }

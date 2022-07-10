@@ -1,8 +1,10 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class AboutDialogDemo extends StatelessWidget {
-  _showAboutDIalog(BuildContext context) {
+  const AboutDialogDemo({super.key});
+
+  void _showAboutDIalog(BuildContext context) {
     showAboutDialog(
       context: context,
       applicationIcon: FlutterLogo(
@@ -10,30 +12,30 @@ class AboutDialogDemo extends StatelessWidget {
         style: FlutterLogoStyle.stacked,
         textColor: Colors.red[400]!,
       ),
-      applicationName: "flutter assistant",
-      applicationVersion: "2.0.0",
+      applicationName: 'flutter assistant',
+      applicationVersion: '2.0.0',
       children: [
         Column(
-          children: <Widget>[
-            Text("*********"),
-            Text("*********"),
-            Text("*********"),
-            Text("*********"),
+          children: const <Widget>[
+            Text('*********'),
+            Text('*********'),
+            Text('*********'),
+            Text('*********'),
           ],
         )
       ],
-      applicationLegalese: "MIT",
+      applicationLegalese: 'MIT',
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "AboutDialogDemo",
+      appBarTitle: 'AboutDialogDemo',
       body: Center(
         child: TextButton(
           onPressed: () => _showAboutDIalog(context),
-          child: Text("showAboutDIalog"),
+          child: const Text('showAboutDIalog'),
         ),
       ),
     );

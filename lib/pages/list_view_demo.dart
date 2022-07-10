@@ -1,16 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_assistant/entity/random_tools.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
-import 'package:flutter/material.dart';
 
 class ListViewDemo extends StatelessWidget {
+  const ListViewDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "ListViewDemo",
+      appBarTitle: 'ListViewDemo',
       body: Row(
         children: <Widget>[
           Flexible(
-            flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView(
@@ -21,13 +22,13 @@ class ListViewDemo extends StatelessWidget {
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              duration: Duration(milliseconds: 500),
-                              content: Text("ListView-$i"),
+                              duration: const Duration(milliseconds: 500),
+                              content: Text('ListView-$i'),
                             ),
                           );
                         },
-                        child: Text("data$i"),
                         color: RandomTools.randomColors(),
+                        child: Text('data$i'),
                       ),
                     )
                 ],
@@ -35,7 +36,6 @@ class ListViewDemo extends StatelessWidget {
             ),
           ),
           Flexible(
-            flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.builder(
@@ -45,39 +45,40 @@ class ListViewDemo extends StatelessWidget {
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          duration: Duration(milliseconds: 500),
-                          content: Text("ListView.builder-$index"),
+                          duration: const Duration(milliseconds: 500),
+                          content: Text('ListView.builder-$index'),
                         ),
                       );
                     },
-                    child: Text("data$index"),
                     color: RandomTools.randomColors(),
+                    child: Text('data$index'),
                   );
                 },
               ),
             ),
           ),
           Flexible(
-            flex: 1,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.separated(
                 itemCount: 20,
                 separatorBuilder: (BuildContext context, int index) {
-                  return Divider(height: 1,);
+                  return const Divider(
+                    height: 1,
+                  );
                 },
                 itemBuilder: (BuildContext context, int index) {
                   return MaterialButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          duration: Duration(milliseconds: 500),
-                          content: Text("ListView.separated-$index"),
+                          duration: const Duration(milliseconds: 500),
+                          content: Text('ListView.separated-$index'),
                         ),
                       );
                     },
-                    child: Text("data$index"),
                     color: RandomTools.randomColors(),
+                    child: Text('data$index'),
                   );
                 },
               ),

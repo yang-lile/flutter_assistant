@@ -1,11 +1,15 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class DraggableDemo extends StatelessWidget {
+  const DraggableDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "DraggableDemo",
+      appBarTitle: 'DraggableDemo',
       body: _SuspendedBall(
         // 使用Stack实现，不推荐
         child: Container(),
@@ -15,10 +19,9 @@ class DraggableDemo extends StatelessWidget {
 }
 
 class _SuspendedBall extends StatefulWidget {
-  
-  final Widget child;
+  const _SuspendedBall({required this.child});
 
-  const _SuspendedBall({Key? key, required this.child}) : super(key: key);
+  final Widget child;
 
   @override
   _SuspendedBallState createState() => _SuspendedBallState();
@@ -27,22 +30,22 @@ class _SuspendedBall extends StatefulWidget {
 class _SuspendedBallState extends State<_SuspendedBall> {
   double ballSize = 50.0;
   // 控制球的位置
-  Offset _offset = Offset(0, 0);
+  Offset _offset = Offset.zero;
   // 给一个过渡动画时长，单位毫秒
   int duration = 0;
 
   @override
   Widget build(BuildContext context) {
     // 获取状态栏高度
-    double statusBarHeight = MediaQuery.of(context).padding.top;
+    var statusBarHeight = MediaQuery.of(context).padding.top;
     // 手动处理状态栏高度为0的问题
     if (statusBarHeight == 0) {
-      print("0");
+      log('0');
       statusBarHeight = 30;
     }
     // 获取appbar高度
-    double appBarHeight = kToolbarHeight;
-    double w = MediaQuery.of(context).size.width - ballSize;
+    const appBarHeight = kToolbarHeight;
+    final w = MediaQuery.of(context).size.width - ballSize;
 
     return Stack(
       children: [
@@ -55,11 +58,6 @@ class _SuspendedBallState extends State<_SuspendedBall> {
             maxSimultaneousDrags: 1,
             // 拖动的
             feedback: CustomPaint(
-              painter: _BallPainter(),
-              size: Size(ballSize, ballSize),
-            ),
-            // 显示的
-            child: CustomPaint(
               painter: _BallPainter(),
               size: Size(ballSize, ballSize),
             ),
@@ -77,23 +75,28 @@ class _SuspendedBallState extends State<_SuspendedBall> {
                 );
               });
               // 延迟执行靠边操作
-              Future.delayed(Duration(milliseconds: 50)).then(
-                (value) => {
-                  if (_offset.dx != 0 || _offset.dx != w)
-                    {
-                      setState(() {
-                        // 靠边给一个400毫秒的移动效果
-                        duration = 400;
-                        if (_offset.dx < w / 2) {
-                          _offset = Offset(0, _offset.dy);
-                        } else {
-                          _offset = Offset(w, _offset.dy);
-                        }
-                      })
-                    }
+              Future.delayed(
+                const Duration(milliseconds: 50),
+                () {
+                  if (_offset.dx != 0 || _offset.dx != w) {
+                    setState(() {
+                      // 靠边给一个400毫秒的移动效果
+                      duration = 400;
+                      if (_offset.dx < w / 2) {
+                        _offset = Offset(0, _offset.dy);
+                      } else {
+                        _offset = Offset(w, _offset.dy);
+                      }
+                    });
+                  }
                 },
               );
             },
+            // 显示的
+            child: CustomPaint(
+              painter: _BallPainter(),
+              size: Size(ballSize, ballSize),
+            ),
           ),
         ),
         // 孤儿子控件
@@ -105,21 +108,22 @@ class _SuspendedBallState extends State<_SuspendedBall> {
 
 // 绘制球球，可以自己用图片代替
 class _BallPainter extends CustomPainter {
-  Paint _paint1 = Paint()..color = Colors.white70;
-  Paint _paint2 = Paint()..color = Colors.blueGrey[300]!;
+  final Paint _paint1 = Paint()..color = Colors.white70;
+  final Paint _paint2 = Paint()..color = Colors.blueGrey[300]!;
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawCircle(
-      Offset(size.width / 2, size.width / 2),
-      size.width / 2,
-      _paint2,
-    );
-    canvas.drawCircle(
-      Offset(size.width / 2, size.width / 2),
-      size.width / 10 * 3,
-      _paint1,
-    );
+    canvas
+      ..drawCircle(
+        Offset(size.width / 2, size.width / 2),
+        size.width / 2,
+        _paint2,
+      )
+      ..drawCircle(
+        Offset(size.width / 2, size.width / 2),
+        size.width / 10 * 3,
+        _paint1,
+      );
   }
 
   @override

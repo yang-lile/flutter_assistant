@@ -1,12 +1,12 @@
-import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_assistant/entity/widget_model.dart';
 import 'package:flutter_assistant/gen/icons.g.dart';
 import 'package:flutter_assistant/routes.dart';
-import 'package:flutter_assistant/entity/widget_model.dart';
-import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title}) : super(key: key);
+  const MyHomePage({super.key, this.title});
 
+  /// 用于接收一个应用主页的 appbar 标题
   final String? title;
 
   @override
@@ -14,15 +14,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var currentIndex = 1;
+  int currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     Widget body;
     if (currentIndex == 1) {
-      body = IconsList();
+      body = const IconsList();
     } else {
-      body = WidgetList();
+      body = const WidgetList();
     }
     return Scaffold(
       appBar: AppBar(
@@ -36,15 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
             currentIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.widgets_outlined),
-            label: "组件库",
+            label: '组件库',
             activeIcon: Icon(Icons.widgets_sharp),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.image_outlined),
-            label: "图标集",
+            label: '图标集',
             activeIcon: Icon(Icons.image_sharp),
           ),
         ],
@@ -54,16 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class WidgetList extends StatelessWidget {
-  const WidgetList({Key? key}) : super(key: key);
+  const WidgetList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> subtitles = <String>[
-      "Stateless Widget",
-      "Stateful Widget",
-      "introducing"
+    final subtitles = <String>[
+      'Stateless Widget',
+      'Stateful Widget',
+      'introducing'
     ];
-    final List<int> subtitlesIndex = [
+    final subtitlesIndex = <int>[
       2, // 介绍
       0, 0, 0, 1, 1, // 1-5
       0, 0, 0, 0, 0, // 6-10
@@ -79,9 +79,9 @@ class WidgetList extends StatelessWidget {
       1, 1, 0, // 56-60
       0, // 83
     ];
-    List<WidgetModel> widgetModels = [];
-    int length = WidgetNames.values.length;
-    for (int i = 0; i < length; i++) {
+    final widgetModels = <WidgetModel>[];
+    final length = WidgetNames.values.length;
+    for (var i = 0; i < length; i++) {
       widgetModels.add(
         WidgetModel(
           widgetNames: WidgetNames.values[i],
@@ -95,18 +95,18 @@ class WidgetList extends StatelessWidget {
           leading: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
+              SizedBox(
                 width: 24.0,
                 child: Text(
                   (1 + index).toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
                   ),
                 ),
               ),
               Hero(
-                tag: "image" + index.toString(),
+                tag: 'image$index',
                 child: Image.asset(
                   widgetModels[index].image,
                   fit: BoxFit.contain,
@@ -118,12 +118,12 @@ class WidgetList extends StatelessWidget {
             tag: widgetModels[index].title,
             child: Text(
               widgetModels[index].title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
           subtitle: Text(
             widgetModels[index].subtitle,
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
           ),
           onTap: () => _onPressed(context, index),
         );
@@ -132,21 +132,20 @@ class WidgetList extends StatelessWidget {
     );
   }
 
-  _onPressed(BuildContext context, int index) {
-    Navigator.pushNamed(context, routes.keys.toList()[index + 1]);
-  }
+  Future<dynamic> _onPressed(BuildContext context, int index) =>
+      Navigator.pushNamed(context, routes.keys.toList()[index + 1]);
 }
 
 class IconsList extends StatelessWidget {
-  const IconsList({Key? key}) : super(key: key);
+  const IconsList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: ListTile(
-            title: Text("PlatformAdaptiveIcons"),
+            title: Text('PlatformAdaptiveIcons'),
           ),
         ),
         SliverGrid.extent(
@@ -156,16 +155,16 @@ class IconsList extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(item[0])),
+                    SnackBar(content: Text(item.name)),
                   );
                 },
-                icon: Icon(item[1]),
+                icon: Icon(item.iconData),
               ),
           ],
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: ListTile(
-            title: Text("Icons"),
+            title: Text('Icons'),
           ),
         ),
         SliverGrid.extent(
@@ -176,9 +175,9 @@ class IconsList extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(item[0]),
+                      content: Text(item.name),
                       action: SnackBarAction(
-                        label: "了解",
+                        label: '了解',
                         onPressed: () {
                           ScaffoldMessenger.of(context).removeCurrentSnackBar();
                         },
@@ -186,7 +185,7 @@ class IconsList extends StatelessWidget {
                     ),
                   );
                 },
-                icon: Icon(item[1]),
+                icon: Icon(item.iconData),
               ),
           ],
         ),

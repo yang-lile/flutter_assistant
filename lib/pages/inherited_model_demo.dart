@@ -4,11 +4,14 @@
 ///
 /// 当然，现在我们使用各种状态管理插件
 /// 而不再使用这一套操作，所以`InheritedModel`也可以只做了解
+import 'dart:developer';
 
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class InheritedModelDemo extends StatefulWidget {
+  const InheritedModelDemo({super.key});
+
   @override
   _InheritedModelDemoState createState() => _InheritedModelDemoState();
 }
@@ -20,7 +23,7 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "InheritedModelDemo",
+      appBarTitle: 'InheritedModelDemo',
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,20 +31,20 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
           DataModel(
             number1: data1,
             // number2: data2,
-            child: ChildWidget1(),
+            child: const ChildWidget1(),
           ),
           DataModel(
             // number1: data1,
             number2: data2,
-            child: ChildWidget2(),
+            child: const ChildWidget2(),
           ),
-          ElevatedButton (
+          ElevatedButton(
             onPressed: () => setState(() => ++data1),
-            child: Text("++data1"),
+            child: const Text('++data1'),
           ),
-          ElevatedButton (
+          ElevatedButton(
             onPressed: () => setState(() => ++data2),
-            child: Text("++data2"),
+            child: const Text('++data2'),
           ),
         ],
       ),
@@ -50,6 +53,8 @@ class _InheritedModelDemoState extends State<InheritedModelDemo> {
 }
 
 class ChildWidget1 extends StatefulWidget {
+  const ChildWidget1({super.key});
+
   @override
   _ChildWidget1State createState() => _ChildWidget1State();
 }
@@ -62,7 +67,7 @@ class _ChildWidget1State extends State<ChildWidget1> {
       aspect: 100,
     )!;
     return Center(
-      child: Text("data1:${data.number1}"),
+      child: Text('data1:${data.number1}'),
     );
   }
 
@@ -70,11 +75,13 @@ class _ChildWidget1State extends State<ChildWidget1> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("ChildWidget1 changed");
+    log('ChildWidget1 changed');
   }
 }
 
 class ChildWidget2 extends StatefulWidget {
+  const ChildWidget2({super.key});
+
   @override
   _ChildWidget2State createState() => _ChildWidget2State();
 }
@@ -88,7 +95,7 @@ class _ChildWidget2State extends State<ChildWidget2> {
     )!;
 
     return Center(
-      child: Text("data2:${data.number2}"),
+      child: Text('data2:${data.number2}'),
     );
   }
 
@@ -96,20 +103,20 @@ class _ChildWidget2State extends State<ChildWidget2> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("ChildWidget2 changed");
+    log('ChildWidget2 changed');
   }
 }
 
 /// `InheritedModel`后的类型，和`updateShouldNotifyDependent`中的`dependencies`的类型一致
 class DataModel extends InheritedModel<int> {
-  final int? number1;
-  final int? number2;
-
   const DataModel({
     this.number1,
     this.number2,
-    required Widget child,
-  }) : super(child: child);
+    required super.child,
+    super.key,
+  });
+  final int? number1;
+  final int? number2;
 
   @override
   bool updateShouldNotifyDependent(DataModel oldWidget, Set<int> dependencies) {

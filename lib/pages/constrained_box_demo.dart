@@ -1,25 +1,32 @@
 /// 实现`Container`适配子控件的大小的方法：
 /// 使用`Container`->`ConstrainedBox`(设置最大宽)->`子控件`
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class ConstrainedBoxDemo extends StatelessWidget {
+  ConstrainedBoxDemo({super.key});
+
   final List<_Message> _messeges = [
-    _Message(id: 1, message: "1，是指某某人说的"),
-    _Message(id: 2, message: "2，也是某某群友"),
-    _Message(id: 0, message: "0，是你自己"),
-    _Message(id: 0, message: "左边短句测试"),
-    _Message(id: 1, message: "右边短句测试"),
+    _Message(id: 1, message: '1，是指某某人说的'),
+    _Message(id: 2, message: '2，也是某某群友'),
+    _Message(id: 0, message: '0，是你自己'),
+    _Message(id: 0, message: '左边短句测试'),
+    _Message(id: 1, message: '右边短句测试'),
     _Message(
-        id: 0,
-        message:
-            "左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，\n左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，"),
+      id: 0,
+      message:
+          '左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，\n'
+          '左边长句测试，，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，左边长句测试，',
+    ),
     _Message(
-        id: 1,
-        message:
-            "右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，\n右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，"),
-    _Message(id: 2, message: """废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
+      id: 1,
+      message:
+          '右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，\n'
+          '右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，右边长句测试，',
+    ),
+    _Message(
+      id: 2,
+      message: '''
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
@@ -32,14 +39,16 @@ class ConstrainedBoxDemo extends StatelessWidget {
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
-废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，""")
+废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
+废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，''',
+    )
   ];
 
   @override
   Widget build(BuildContext context) {
-    double screenW = MediaQuery.of(context).size.width;
+    final screenW = MediaQuery.of(context).size.width;
     return MyScaffold(
-      appBarTitle: "ConstrainedBoxDemo",
+      appBarTitle: 'ConstrainedBoxDemo',
       body: Padding(
         padding: const EdgeInsets.only(left: 8.0, right: 8.0),
         child: ListView.builder(
@@ -55,7 +64,11 @@ class ConstrainedBoxDemo extends StatelessWidget {
                       child: Container(),
                     ),
                     buildMessage(
-                        index, screenW, "消息来自自己", Alignment.centerRight),
+                      index,
+                      screenW,
+                      '消息来自自己',
+                      Alignment.centerRight,
+                    ),
                     buildHeadImage(screenW, index)
                   ],
                 ),
@@ -68,10 +81,11 @@ class ConstrainedBoxDemo extends StatelessWidget {
                   children: <Widget>[
                     buildHeadImage(screenW, index),
                     buildMessage(
-                        index,
-                        screenW,
-                        "消息来自${_messeges[index].id == 1 ? "一号群友" : "二号群友"}",
-                        Alignment.centerLeft),
+                      index,
+                      screenW,
+                      "消息来自${_messeges[index].id == 1 ? "一号群友" : "二号群友"}",
+                      Alignment.centerLeft,
+                    ),
                   ],
                 ),
               );
@@ -84,10 +98,10 @@ class ConstrainedBoxDemo extends StatelessWidget {
 
   Widget buildHeadImage(double screenW, int index) {
     return Tooltip(
-      message: "头像",
+      message: '头像',
       child: Semantics(
         container: true,
-        label: "头像",
+        label: '头像',
         child: Ink(
           width: screenW / 10,
           height: screenW / 10,
@@ -114,13 +128,13 @@ class ConstrainedBoxDemo extends StatelessWidget {
       label: _messeges[index].message,
       hint: hint,
       child: Container(
-        margin: EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(8.0),
         alignment: acr,
         decoration: BoxDecoration(
           color: _messeges[index].id == 0
               ? Colors.blue[100]
               : Colors.blueGrey[100],
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(8.0),
           ),
         ),
@@ -137,7 +151,7 @@ class ConstrainedBoxDemo extends StatelessWidget {
 }
 
 class _Message {
+  _Message({this.id, this.message});
   int? id;
   String? message;
-  _Message({this.id, this.message});
 }

@@ -8,20 +8,21 @@
 /// 。 这将强制`Flutter`生成叠加层以可视化语义树。
 /// 最后附上一个比较全面的链接
 /// https://juejin.im/entry/5c41490a6fb9a049b5071a63
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class SemanticsDemo extends StatelessWidget {
+  const SemanticsDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "SemanticsDemo",
+      appBarTitle: 'SemanticsDemo',
       body: Center(
         child: Semantics(
           container: true,
           // 注意标点符号的使用，没有这个句号将会和下面的语句一起连读。
-          label: "这是一个乖巧的Container。",
+          label: '这是一个乖巧的Container。',
           child: Container(
             width: 200.0,
             height: 200.0,
@@ -30,10 +31,10 @@ class SemanticsDemo extends StatelessWidget {
               color: Colors.blue[300],
               borderRadius: BorderRadius.circular(8.0),
             ),
-            child: Text(
-              "同时按住音量键+-开启无障碍，单击我可以触发label。请多使用Semantics，这是对有障碍人群最大的帮助！！！",
+            child: const Text(
+              '同时按住音量键+-开启无障碍，单击我可以触发label。请多使用Semantics，这是对有障碍人群最大的帮助！！！',
               semanticsLabel:
-                  "同时按住音量键+-开启无障碍，单击我可以触发label。请多使用Semantics，这是对有障碍人群最大的帮助！！！",
+                  '同时按住音量键+-开启无障碍，单击我可以触发label。请多使用Semantics，这是对有障碍人群最大的帮助！！！',
             ),
           ),
         ),

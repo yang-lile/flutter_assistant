@@ -1,15 +1,18 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class SliderDemo extends StatelessWidget {
+  const SliderDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-        appBarTitle: "SliderDemo",
-        body: Center(
-          child: _SliderDemo(),
-        ));
+      appBarTitle: 'SliderDemo',
+      body: Center(
+        child: _SliderDemo(),
+      ),
+    );
   }
 }
 
@@ -37,18 +40,18 @@ class __SliderDemoState extends State<_SliderDemo> {
           width: 300.0,
           height: 300.0,
           decoration: BoxDecoration(
-            border: Border.all(width: 1),
+            border: Border.all(),
           ),
           child: AnimatedPadding(
             curve: Curves.elasticOut,
             padding: EdgeInsets.all(_padding * 100 + 20),
-            duration: Duration(milliseconds: 1000),
-            child: ColoredBox(color: Colors.blue),
+            duration: const Duration(milliseconds: 1000),
+            child: const ColoredBox(color: Colors.blue),
           ),
         ),
         Slider(
           value: _slider1,
-          label: "$_slider1",
+          label: '$_slider1',
           onChanged: (value) => setState(() => _slider1 = value),
           onChangeEnd: (value) => setState(() => _padding = value),
         ),
@@ -59,15 +62,14 @@ class __SliderDemoState extends State<_SliderDemo> {
         ),
         Slider(
           value: _slider3,
-          label: "$_slider3",
+          label: '$_slider3',
           divisions: 5,
           onChanged: (value) => setState(() => _slider3 = value),
         ),
         Slider(
           value: _slider4,
-          label: "$_slider4",
+          label: '$_slider4',
           divisions: 5,
-          min: 0,
           max: 100,
           onChanged: (value) => setState(() => _slider4 = value),
         ),
@@ -79,9 +81,8 @@ class __SliderDemoState extends State<_SliderDemo> {
               _slider5e = value.end;
             });
           },
-          min: 0,
           max: 10,
-          labels: RangeLabels("$_slider5s", "$_slider5e"),
+          labels: RangeLabels('$_slider5s', '$_slider5e'),
           divisions: 10,
         ),
       ],

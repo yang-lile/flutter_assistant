@@ -1,15 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_assistant/entity/random_tools.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
-import 'package:flutter/material.dart';
 
 class ListTileDemo extends StatelessWidget {
+  const ListTileDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "ListTileDemo",
+      appBarTitle: 'ListTileDemo',
       body: Builder(
         builder: (BuildContext context) => ListView.separated(
-          separatorBuilder: (context, index) => Divider(
+          separatorBuilder: (context, index) => const Divider(
             height: 3.0,
             thickness: 2.0,
             indent: 70.0,
@@ -24,10 +26,10 @@ class ListTileDemo extends StatelessWidget {
                 size: 40.0,
               ),
               title: Text(
-                "Somebody $index",
+                'Somebody $index',
               ),
               subtitle: Text(
-                "Phone Number: ${RandomTools.randomNumber(len: 6)}",
+                'Phone Number: ${RandomTools.randomNumber(len: 6)}',
               ),
               trailing: Ink(
                 child: InkWell(
@@ -35,14 +37,14 @@ class ListTileDemo extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          "Calling Somebody $index ... ",
+                          'Calling Somebody $index ... ',
                         ),
                       ),
                     );
                   },
-                  child: Padding(
+                  child: const Padding(
                     // 添加一个padding控件使可点击区域变大
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(
                       Icons.call,
                       size: 32.0,
@@ -53,7 +55,7 @@ class ListTileDemo extends StatelessWidget {
               onTap: () => ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                    "this is Somebody $index",
+                    'this is Somebody $index',
                   ),
                 ),
               ),

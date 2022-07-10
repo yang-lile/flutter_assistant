@@ -1,7 +1,11 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class InheritedWidgetDemo extends StatefulWidget {
+  const InheritedWidgetDemo({super.key});
+
   @override
   _InheritedWidgetDemoState createState() => _InheritedWidgetDemoState();
 }
@@ -11,22 +15,22 @@ class _InheritedWidgetDemoState extends State<InheritedWidgetDemo> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "InheritedWidgetDemo",
+      appBarTitle: 'InheritedWidgetDemo',
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           DataModel(
             number: data,
-            child: ChildWidget1(),
+            child: const ChildWidget1(),
           ),
-          ChildWidget2(),
-          ElevatedButton (
+          const ChildWidget2(),
+          ElevatedButton(
             onPressed: () => setState(() => ++data),
-            child: Text("++data"),
+            child: const Text('++data'),
           ),
-          ElevatedButton (
+          ElevatedButton(
             onPressed: () => setState(() => --data),
-            child: Text("--data"),
+            child: const Text('--data'),
           ),
         ],
       ),
@@ -35,6 +39,8 @@ class _InheritedWidgetDemoState extends State<InheritedWidgetDemo> {
 }
 
 class ChildWidget1 extends StatefulWidget {
+  const ChildWidget1({super.key});
+
   @override
   _ChildWidget1State createState() => _ChildWidget1State();
 }
@@ -44,18 +50,20 @@ class _ChildWidget1State extends State<ChildWidget1> {
   Widget build(BuildContext context) {
     final data = context.dependOnInheritedWidgetOfExactType<DataModel>()!;
     return Center(
-      child: Text("${data.number}"),
+      child: Text('${data.number}'),
     );
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("ChildWidget1 changed");
+    log('ChildWidget1 changed');
   }
 }
 
 class ChildWidget2 extends StatefulWidget {
+  const ChildWidget2({super.key});
+
   @override
   _ChildWidget2State createState() => _ChildWidget2State();
 }
@@ -63,23 +71,23 @@ class ChildWidget2 extends StatefulWidget {
 class _ChildWidget2State extends State<ChildWidget2> {
   @override
   Widget build(BuildContext context) {
-    return Text("please click raise button...");
+    return const Text('please click raise button...');
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("ChildWidget2 changed");
+    log('ChildWidget2 changed');
   }
 }
 
 class DataModel extends InheritedWidget {
-  final int? number;
-
-  DataModel({
+  const DataModel({
     this.number,
-    required Widget child,
-  }) : super(child: child);
+    required super.child,
+    super.key,
+  });
+  final int? number;
 
   @override
   bool updateShouldNotify(DataModel oldWidget) {

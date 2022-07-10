@@ -2,20 +2,21 @@
 /// 奇怪的性能提升了！！！
 /// https://juejin.im/post/5ced2f62e51d454fd8057b18#heading-3
 /// 网址提供了自定义`ValueNotifier`的方法，可以局部更新对象的数据
-
 import 'dart:math';
 
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class ValueListenableBuilderDemo extends StatelessWidget {
-  final ValueNotifier<int> _valueNotifier = ValueNotifier<int>(0);
-  final Random _random = Random();
+  const ValueListenableBuilderDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final _valueNotifier = ValueNotifier<int>(0);
+    final _random = Random();
+
     return MyScaffold(
-      appBarTitle: "ValueListenableBuilderDemo",
+      appBarTitle: 'ValueListenableBuilderDemo',
       body: Center(
         child: ValueListenableBuilder(
           valueListenable: _valueNotifier,
@@ -24,26 +25,26 @@ class ValueListenableBuilderDemo extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
                   ],
                 ),
                 TableRow(
                   children: [
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
                   ],
                 ),
                 TableRow(
                   children: [
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
-                    Center(child: Text("$value")),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
+                    Center(child: Text('$value')),
                   ],
                 ),
               ],
@@ -52,7 +53,7 @@ class ValueListenableBuilderDemo extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
         onPressed: () => _valueNotifier.value = _random.nextInt(9999),
       ),
     );

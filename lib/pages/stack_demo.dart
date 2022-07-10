@@ -1,19 +1,20 @@
 /// 默认居左上角，可以使用alinment属性，自定义对齐方式
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class StackDemo extends StatelessWidget {
+  const StackDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "StackDemo",
+      appBarTitle: 'StackDemo',
       body: Center(
         child: Stack(
           // 默认是Overflow.clip（超出的剪切掉），改为超出的也显示
           // overflow: Overflow.visible,
           // update on flutter ^1.26.0
-          clipBehavior : Clip.none,
+          clipBehavior: Clip.none,
           children: <Widget>[
             Container(
               color: Colors.red[300],

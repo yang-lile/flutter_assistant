@@ -15,41 +15,47 @@
 /// Dart is smart enough to do the computation for you during compilation.
 /// So it's okay and more readable to provide the `AspectRatio` as a fraction.
 /// `AspectRatio`'s child can be any widget.
-/// For example, a colorful container, a picture, a whole widget tree, and one more thing.
+/// For example, a colorful container, a picture,
+/// a whole widget tree, and one more thing.
 /// make sure you actually let the `AspectRatio` widget size its child.
 /// if you put `AspectRatio` into something like `Expanded`,
 /// then that will be forced by its parent to expand.
-/// Tightly fitted widgets like `Expanded` don't give their children a choice-- harsh.
-/// If this happens to you, just put something like `Align` between the `Expanded` and the `AspectRatio` .
+/// Tightly fitted widgets like `Expanded` don't give their children a choice--
+/// harsh.
+/// If this happens to you, just put something like `Align`
+/// between the `Expanded` and the `AspectRatio` .
 /// `Align` will be forced by `Expanded` to fill the area,
 /// but it will let its child assume its own proportions.
 /// Thanks, `Align`!
 /// balabalabala...
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class AspectRatioDemo extends StatelessWidget {
+  const AspectRatioDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "AspectRatioDemo",
-      body: Column(children: <Widget>[
-        Expanded(
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: AspectRatio(
-                aspectRatio: 3 / 2,
-                child: Container(
-                  color: Colors.lightBlueAccent[400],
+      appBarTitle: 'AspectRatioDemo',
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AspectRatio(
+                  aspectRatio: 3 / 2,
+                  child: ColoredBox(
+                    color: Colors.lightBlueAccent.shade400,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }

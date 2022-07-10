@@ -1,9 +1,11 @@
 import 'dart:math';
 
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class AnimatedListDemo extends StatefulWidget {
+  const AnimatedListDemo({super.key});
+
   @override
   _AnimatedListDemoState createState() => _AnimatedListDemoState();
 }
@@ -16,7 +18,7 @@ class _AnimatedListDemoState extends State<AnimatedListDemo> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "AnimatedListDemo",
+      appBarTitle: 'AnimatedListDemo',
       body: AnimatedList(
         key: _listKey,
         initialItemCount: listData.length,
@@ -28,7 +30,7 @@ class _AnimatedListDemoState extends State<AnimatedListDemo> {
               onTap: () {
                 // 删除的时候需要提前保存数据
                 // 不然调用`removeItem`方法后，无法访问到`index`的数据
-                String data = listData[index].toString();
+                final data = listData[index].toString();
                 _listKey.currentState!.removeItem(
                   index,
                   (context, animation) {
@@ -48,10 +50,10 @@ class _AnimatedListDemoState extends State<AnimatedListDemo> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           // 插入数据
-          int index = listData.length;
+          final index = listData.length;
           // 顺序可以颠倒，但是index必须唯一
           listData.insert(index, random.nextInt(3000));
           _listKey.currentState!.insertItem(index);

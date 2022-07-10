@@ -1,4 +1,6 @@
 // 没有找到修改枚举类型值的方法
+// ignore_for_file: constant_identifier_names
+
 enum WidgetNames {
   INTRODUCTION,
   SAFE_AREA,
@@ -76,13 +78,15 @@ class WidgetModel {
     // 第一个的标题有点长，特殊处理
     switch (widgetNames.index) {
       case 0:
-        return "Introdution Widget of the Week!";
+        return 'Introdution Widget of the Week!';
       default:
         // 转大驼峰命名
-        String s = widgetNames.toString().toLowerCase().split('.').last;
+        var s = widgetNames.toString().toLowerCase().split('.').last;
         s = s[0].toUpperCase() + s.substring(1);
         return s.replaceAllMapped(
-            new RegExp(r"_\w"), (match) => match.group(0)!.toUpperCase()[1]);
+          RegExp(r'_\w'),
+          (match) => match.group(0)!.toUpperCase()[1],
+        );
     }
   }
 

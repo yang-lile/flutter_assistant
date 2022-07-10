@@ -1,60 +1,61 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class FloatingActionButtonDemo extends StatelessWidget {
-  final String appBarTitle = "FloatingActionButtonDemo";
-  final Widget? body = null;
+  const FloatingActionButtonDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const appBarTitle = 'FloatingActionButtonDemo';
+
+    final appBar = AppBar(
+      title: const Text(appBarTitle),
+      actions: <Widget>[
+        TextButton.icon(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (context) => const SourceCodePage(title: appBarTitle),
+            ),
+          ),
+          icon: const Icon(Icons.code),
+          label: const Text('源码'),
+        ),
+      ],
+    );
     return Scaffold(
-      appBar: _buildAppBar(context),
-      body: body,
-      floatingActionButton: _buildFloatingActionButton(context),
+      appBar: appBar,
+      // body: body,
+      floatingActionButton: _buildFloatingActionButton(context, appBarTitle),
       bottomNavigationBar: _buildBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
-  AppBar _buildAppBar(BuildContext context) {
-    return AppBar(
-      title: Text(appBarTitle),
-      actions: <Widget>[
-        TextButton.icon(
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SourceCodePage(title: appBarTitle),
-            ),
-          ),
-          icon: Icon(Icons.code),
-          label: Text("源码"),
-        ),
-      ],
-    );
-  }
-
-  FloatingActionButton _buildFloatingActionButton(BuildContext context) {
+  FloatingActionButton _buildFloatingActionButton(
+    BuildContext context,
+    String appBarTitle,
+  ) {
     return FloatingActionButton(
       onPressed: () => Navigator.push(
         context,
-        MaterialPageRoute(
+        MaterialPageRoute<void>(
           builder: (context) => SourceCodePage(title: appBarTitle),
         ),
       ),
-      child: Icon(Icons.code),
+      child: const Icon(Icons.code),
     );
   }
 
   BottomAppBar _buildBottomAppBar() {
     return BottomAppBar(
       color: Colors.white,
-      shape: CircularNotchedRectangle(),
+      shape: const CircularNotchedRectangle(),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _textButton(Icon(Icons.color_lens), "color_lens"),
-          _textButton(Icon(Icons.content_copy), "content_copy"),
+          _textButton(const Icon(Icons.color_lens), 'color_lens'),
+          _textButton(const Icon(Icons.content_copy), 'content_copy'),
         ],
       ),
     );

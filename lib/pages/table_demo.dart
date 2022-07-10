@@ -1,13 +1,15 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class TableDemo extends StatelessWidget {
+  const TableDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "TableDemo",
+      appBarTitle: 'TableDemo',
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child:Center(
         child: Table(
           defaultVerticalAlignment: TableCellVerticalAlignment.middle,
@@ -63,9 +65,9 @@ class TableDemo extends StatelessWidget {
     );
   }
 
-  _buildTableItems(Widget child) {
+  Padding _buildTableItems(Widget child) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: child,
     );
   }

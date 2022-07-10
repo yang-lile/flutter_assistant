@@ -1,19 +1,21 @@
-import 'package:flutter_assistant/codeviewer/prehighlighter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_assistant/codeviewer/prehighlighter.dart';
+import 'package:flutter_assistant/global_datas.dart';
 
 class MyScaffold extends StatelessWidget {
-  final String appBarTitle;
-  final Widget body;
-  final Widget? floatingActionButton;
-  final Widget? dialogContext;
-
-  MyScaffold({
+  const MyScaffold({
     required this.appBarTitle,
     required this.body,
     this.floatingActionButton,
     this.dialogContext,
+    super.key,
   });
+
+  final String appBarTitle;
+  final Widget body;
+  final Widget? floatingActionButton;
+  final Widget? dialogContext;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,12 @@ class MyScaffold extends StatelessWidget {
         title: Text(appBarTitle),
         actions: [
           IconButton(
-            tooltip: "源码",
-            icon: Icon(Icons.code_sharp),
+            tooltip: '源码',
+            icon: const Icon(Icons.code_sharp),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => SourceCodePage(title: appBarTitle),
                 ),
               );
@@ -39,49 +41,57 @@ class MyScaffold extends StatelessWidget {
         ],
       ),
       body: body,
-      floatingActionButton: floatingActionButton ?? null,
+      floatingActionButton: floatingActionButton,
     );
   }
 
-  void _showDialog(BuildContext context) {
-    Future(
-      () => showDialog(
+  Future<void> _showDialog(BuildContext context) => showDialog<void>(
         context: context,
         builder: (context) => AlertDialog(
           content: dialogContext,
-          title: Text("学习提示"),
+          title: const Text('学习提示'),
           actions: <Widget>[
             TextButton(
-              child: Text(
-                "了解",
+              child: const Text(
+                '了解',
                 style: TextStyle(color: Colors.blue),
               ),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ],
         ),
-      ),
-    );
-  }
+      );
 }
 
 class SourceCodePage extends StatelessWidget {
-  final String title;
-  SourceCodePage({
+  const SourceCodePage({
+    super.key,
     required this.title,
   });
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("$title Source Code")),
+      appBar: AppBar(title: Text('$title Source Code')),
       body: Container(
         color: Colors.black,
         padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            _buildFutureBuilder(context),
-          ],
+        // 代码高亮主题配置
+        child: GlobalDatas(
+          baseStyle: codeTheme.copyWith(color: const Color(0xFFFAFBFB)),
+          numberStyle: codeTheme.copyWith(color: const Color(0xFFBD93F9)),
+          commentStyle: codeTheme.copyWith(color: const Color(0xFF808080)),
+          keywordStyle: codeTheme.copyWith(color: const Color(0xFF1CDEC9)),
+          stringStyle: codeTheme.copyWith(color: const Color(0xFFFFA65C)),
+          punctuationStyle: codeTheme.copyWith(color: const Color(0xFF8BE9FD)),
+          classStyle: codeTheme.copyWith(color: const Color(0xFFD65BAD)),
+          constantStyle: codeTheme.copyWith(color: const Color(0xFFFF8383)),
+          child: ListView(
+            children: [
+              _buildFutureBuilder(context),
+            ],
+          ),
         ),
       ),
     );
@@ -91,34 +101,39 @@ class SourceCodePage extends StatelessWidget {
   FutureBuilder<List<TextSpan>> _buildFutureBuilder(BuildContext context) {
     return FutureBuilder(
       future: _showCode(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<List<TextSpan>> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return SelectableText.rich(TextSpan(
-            children: snapshot.data,
-          ));
+          return SelectableText.rich(
+            TextSpan(
+              children: snapshot.data,
+            ),
+          );
         } else {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );
   }
 
   Future<List<TextSpan>> _showCode() async {
-    var _s = "${title[0].toLowerCase()}${title.substring(1)}";
+    var _s = '${title[0].toLowerCase()}${title.substring(1)}';
     for (var i = 1; i < title.length; i++) {
-      if (_s[i].contains(RegExp(r'[A-Z]'))) {
-        _s = _s.replaceRange(i, i + 1, "_${_s[i].toLowerCase()}");
+      if (_s[i].contains(RegExp('[A-Z]'))) {
+        _s = _s.replaceRange(i, i + 1, '_${_s[i].toLowerCase()}');
       }
     }
-    final _string = "lib/pages/$_s.dart";
+    final _string = 'lib/pages/$_s.dart';
     final content = await rootBundle.loadString(_string);
     final _codes = content.split('\n');
-    List<TextSpan> _spanedCodes = [];
-    for (var _code in _codes) {
-      _spanedCodes.addAll(DartSyntaxPrehighlighter().format(_code));
-      _spanedCodes.add(TextSpan(
-        text: "\n",
-      ));
+    final _spanedCodes = <TextSpan>[];
+    for (final _code in _codes) {
+      _spanedCodes
+        ..addAll(DartSyntaxPrehighlighter().format(_code))
+        ..add(
+          const TextSpan(
+            text: '\n',
+          ),
+        );
     }
     return _spanedCodes;
   }

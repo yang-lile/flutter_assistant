@@ -1,11 +1,13 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class FractionallySizedBoxDemo extends StatelessWidget {
+  const FractionallySizedBoxDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "FractionallySizedBoxDemo",
+      appBarTitle: 'FractionallySizedBoxDemo',
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -18,21 +20,21 @@ class FractionallySizedBoxDemo extends StatelessWidget {
                   color: Colors.blue,
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("没有彩蛋"),
+                      const SnackBar(
+                        content: Text('没有彩蛋'),
                       ),
                     );
                   },
-                  child: Text("占用宽的70%"),
+                  child: const Text('占用宽的70%'),
                 ),
               ),
             ),
-            Flexible(
+            const Flexible(
               child: FractionallySizedBox(
                 heightFactor: 0.1,
               ),
             ),
-            Text("距离上面的按钮10%的高"),
+            const Text('距离上面的按钮10%的高'),
           ],
         ),
       ),

@@ -1,13 +1,14 @@
-import 'package:flutter_assistant/global_datas.dart';
-import 'package:flutter_assistant/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/home_page.dart';
+import 'package:flutter_assistant/routes.dart';
 
 void main() {
-  globalDatas = GlobalDatas();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       initialRoute: '/',
-      onGenerateRoute: onGenerateRoute,
+      routes: routes,
+      home: const MyHomePage(title: 'Flutter Assistant',),
+      // onGenerateRoute: onGenerateRoute,
       // showSemanticsDebugger: true, // 大可不必使用，万恶之源
     );
   }

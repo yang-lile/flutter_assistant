@@ -2,15 +2,16 @@
 /// 1. 创建一个固定大小的控件
 /// 2. 通过`double.infinity`来设置最大值
 /// 3. 在简单的布局里，使用不含子控件的`SizedBox`来占位
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class SizedBoxDemo extends StatelessWidget {
+  const SizedBoxDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "SizedBoxDemo",
+      appBarTitle: 'SizedBoxDemo',
       body: Center(
         child: Column(
           children: <Widget>[
@@ -19,10 +20,10 @@ class SizedBoxDemo extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(Colors.pink[200]),
               ),
               onPressed: () {},
-              child: Text("TextButton"),
+              child: const Text('TextButton'),
             ),
             // 占位
-            SizedBox(
+            const SizedBox(
               height: 200.0,
             ),
             // 指定大小
@@ -34,7 +35,7 @@ class SizedBoxDemo extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.pink[200]),
                 ),
                 onPressed: () {},
-                child: Text("TextButton"),
+                child: const Text('TextButton'),
               ),
             ),
           ],

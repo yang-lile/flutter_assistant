@@ -1,11 +1,13 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class IndexedStackDemo extends StatelessWidget {
+  const IndexedStackDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "IndexedStackDemo",
+      appBarTitle: 'IndexedStackDemo',
       body: Center(
         child: _IndexedStack(),
       ),
@@ -20,7 +22,7 @@ class _IndexedStack extends StatefulWidget {
 
 class __IndexedStackState extends State<_IndexedStack> {
   int? index;
-  List colors = [
+  List<MaterialColor> colors = [
     Colors.red,
     Colors.orange,
     Colors.yellow,
@@ -50,8 +52,8 @@ class __IndexedStackState extends State<_IndexedStack> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("click!!!"),
-                    Text("index:$i"),
+                    const Text('click!!!'),
+                    Text('index:$i'),
                   ],
                 ),
               ),

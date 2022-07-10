@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 GlobalDatas? globalDatas;
 
-class GlobalDatas extends InheritedModel<String> {
-  GlobalDatas({
+class GlobalDatas extends InheritedModel<TextStyle> {
+  const GlobalDatas({
     this.baseStyle,
     this.numberStyle,
     this.commentStyle,
@@ -12,12 +12,9 @@ class GlobalDatas extends InheritedModel<String> {
     this.punctuationStyle,
     this.classStyle,
     this.constantStyle,
-    Key? key,
-  }) : super(
-          key: key,
-          child: SizedBox(),
-        );
-
+    required super.child,
+    super.key,
+  });
   final TextStyle? baseStyle;
   final TextStyle? numberStyle;
   final TextStyle? commentStyle;
@@ -43,7 +40,10 @@ class GlobalDatas extends InheritedModel<String> {
       oldWidget.constantStyle != constantStyle;
 
   @override
-  bool updateShouldNotifyDependent(GlobalDatas oldWidget, Set dependencies) {
+  bool updateShouldNotifyDependent(
+    GlobalDatas oldWidget,
+    Set<TextStyle> dependencies,
+  ) {
     if (dependencies.contains(baseStyle) && baseStyle != oldWidget.baseStyle) {
       return true;
     } else if (dependencies.contains(numberStyle) &&

@@ -1,16 +1,16 @@
 /// 主要用于专场动画，
 /// 你可以直接复制粘贴FadeTransionDemoModel来修改属于你的转场动画
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class FadeTransitionDemo extends StatelessWidget {
+  const FadeTransitionDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "FadeTransitionDemo",
+      appBarTitle: 'FadeTransitionDemo',
       body: Align(
-        alignment: Alignment.center,
         child: _FadeTransitionTest(
           child: Container(
             color: Colors.yellow[500],
@@ -24,9 +24,8 @@ class FadeTransitionDemo extends StatelessWidget {
 }
 
 class _FadeTransitionTest extends StatefulWidget {
+  const _FadeTransitionTest({required this.child});
   final Widget child;
-
-  _FadeTransitionTest({required this.child});
 
   @override
   _FadeTransitionTestState createState() => _FadeTransitionTestState();
@@ -40,7 +39,7 @@ class _FadeTransitionTestState extends State<_FadeTransitionTest>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
     Tween(

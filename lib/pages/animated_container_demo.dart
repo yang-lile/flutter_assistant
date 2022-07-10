@@ -6,9 +6,11 @@
 /// A good one to know is AnimatedContainer.
 /// You can build it once with a particular attribute, like color.
 /// And when you rebuild it with a different value.
-/// sayt, in response to a setState call, AnimatedContainer performs a linear interpolation between the two values.
+/// sayt, in response to a setState call,
+/// AnimatedContainer performs a linear interpolation between the two values.
 /// And it's more than just colors.
-/// You can animate borders, border radii, background images, shadows, gradients, shapes, padding, width, height, alignment, transforms, and more.
+/// You can animate borders, border radii, background images, shadows,
+/// gradients, shapes, padding, width, height, alignment, transforms, and more.
 /// The length of the animation is controlled by the duration parameter,
 /// and you can also specify your own curve to customize the effect.
 /// There are a bunch of other widgets to help with implicit animations, too.
@@ -25,23 +27,22 @@
 /// 动画时长可以使用duration来控制
 /// 你也可以指定一个非线性的自定义效果。
 /// 这就是balabalabala。。。
-
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class AnimatedContainerDemo extends StatefulWidget {
-  AnimatedContainerDemo({Key? key}) : super(key: key);
+  const AnimatedContainerDemo({super.key});
 
   @override
   _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-  var _myDuration = Duration(seconds: 1);
+  final _myDuration = const Duration(seconds: 1);
   var _color = Colors.purple[300];
   bool flag = true;
 
-  _changeColor() {
+  void _changeColor() {
     setState(() {
       if (flag) {
         _color = Colors.pink[200];
@@ -55,29 +56,30 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "AnimatedContainerDemo",
+      appBarTitle: 'AnimatedContainerDemo',
       body: Align(
-        alignment: Alignment.center,
         child: AnimatedContainer(
           width: 200.0,
           height: 200.0,
           alignment: Alignment.center,
           duration: _myDuration,
           color: _color,
-          child: SomeOtherWidget(),
+          child: const SomeOtherWidget(),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _changeColor(),
-        child: Icon(Icons.cached),
+        onPressed: _changeColor,
+        child: const Icon(Icons.cached),
       ),
     );
   }
 }
 
 class SomeOtherWidget extends StatelessWidget {
+  const SomeOtherWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Text("略略略");
+    return const Text('略略略');
   }
 }

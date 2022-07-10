@@ -1,16 +1,18 @@
-import 'package:flutter_assistant/template/my_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_assistant/template/my_scaffold.dart';
 
 class AbsorbPointerDemo extends StatelessWidget {
+  const AbsorbPointerDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      appBarTitle: "AbsorbPointerDemo",
+      appBarTitle: 'AbsorbPointerDemo',
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _buildPage1(),
-          VerticalDivider(),
+          const VerticalDivider(),
           _buildPage2(),
         ],
       ),
@@ -19,7 +21,6 @@ class AbsorbPointerDemo extends StatelessWidget {
 
   Widget _buildPage1() {
     return AbsorbPointer(
-      absorbing: true,
       child: _buildButtons(),
     );
   }
@@ -36,21 +37,21 @@ class AbsorbPointerDemo extends StatelessWidget {
           children: <Widget>[
             TextButton(
               onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Hello SnackBar")),
+                const SnackBar(content: Text('Hello SnackBar')),
               ),
-              child: Text("click!"),
+              child: const Text('click!'),
             ),
             OutlinedButton(
               onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Hello SnackBar")),
+                const SnackBar(content: Text('Hello SnackBar')),
               ),
-              child: Text("click!"),
+              child: const Text('click!'),
             ),
             OutlinedButton(
               onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Hello SnackBar")),
+                const SnackBar(content: Text('Hello SnackBar')),
               ),
-              child: Text("click!"),
+              child: const Text('click!'),
             ),
           ],
         );
