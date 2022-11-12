@@ -1,6 +1,6 @@
 import 'dart:io';
 
-main() {
+void main() {
   var directory = Directory.current;
   var outDir = Directory(
       "${directory.path}${Platform.pathSeparator}lib${Platform.pathSeparator}gen${Platform.pathSeparator}icons.g.dart");
