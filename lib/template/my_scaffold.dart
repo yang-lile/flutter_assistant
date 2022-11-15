@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_assistant/codeviewer/prehighlighter.dart';
 import 'package:flutter_assistant/global_datas.dart';
 
-class MyScaffold extends StatelessWidget {
+class MyScaffold extends StatefulWidget {
   const MyScaffold({
     required this.appBarTitle,
     required this.body,
@@ -18,13 +18,25 @@ class MyScaffold extends StatelessWidget {
   final Widget? dialogContext;
 
   @override
-  Widget build(BuildContext context) {
-    if (dialogContext != null) {
-      _showDialog(context);
+  State<MyScaffold> createState() => _MyScaffoldState();
+}
+
+class _MyScaffoldState extends State<MyScaffold> {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.dialogContext != null) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        _showDialog(context);
+      });
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(appBarTitle),
+        title: Text(widget.appBarTitle),
         actions: [
           IconButton(
             tooltip: '源码',
@@ -33,22 +45,23 @@ class MyScaffold extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute<void>(
-                  builder: (context) => SourceCodePage(title: appBarTitle),
+                  builder: (context) =>
+                      SourceCodePage(title: widget.appBarTitle),
                 ),
               );
             },
           ),
         ],
       ),
-      body: body,
-      floatingActionButton: floatingActionButton,
+      body: widget.body,
+      floatingActionButton: widget.floatingActionButton,
     );
   }
 
   Future<void> _showDialog(BuildContext context) => showDialog<void>(
         context: context,
         builder: (context) => AlertDialog(
-          content: dialogContext,
+          content: widget.dialogContext,
           title: const Text('学习提示'),
           actions: <Widget>[
             TextButton(

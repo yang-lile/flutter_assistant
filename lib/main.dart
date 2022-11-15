@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.comfortable,
       ),
       darkTheme: ThemeData.dark(),
-      initialRoute: '/',
+      // initialRoute: '/',
       routes: routes,
       home: const MyHomePage(title: 'Flutter Assistant',),
       // onGenerateRoute: onGenerateRoute,

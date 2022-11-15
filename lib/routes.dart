@@ -62,9 +62,9 @@ import 'package:flutter_assistant/pages/value_listenable_builder_demo.dart';
 import 'package:flutter_assistant/pages/wrap_demo.dart';
 
 final routes = <String, Widget Function(BuildContext)>{
-  '/': (context) => MyHomePage(
-        title: ModalRoute.of(context)!.settings.arguments! as String,
-      ),
+  // '/': (context) => MyHomePage(
+  //       title: ModalRoute.of(context)!.settings.arguments! as String,
+  //     ),
   '/introduction': (context) => const Introduction(),
   '/safe_area': (context) => const SafeAreaDemo(),
   '/expanded': (context) => const ExpandedDemo(),

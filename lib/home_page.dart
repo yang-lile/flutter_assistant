@@ -133,7 +133,7 @@ class WidgetList extends StatelessWidget {
   }
 
   Future<dynamic> _onPressed(BuildContext context, int index) =>
-      Navigator.pushNamed(context, routes.keys.toList()[index + 1]);
+      Navigator.pushNamed(context, routes.keys.toList()[index]);
 }
 
 class IconsList extends StatelessWidget {
