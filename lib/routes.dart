@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assistant/home_page.dart';
 import 'package:flutter_assistant/pages/about_dialog_demo.dart';
 import 'package:flutter_assistant/pages/absorb_pointer_demo.dart';
 import 'package:flutter_assistant/pages/alert_dialog_demo.dart';
