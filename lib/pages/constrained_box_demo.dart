@@ -1,5 +1,6 @@
 /// 实现`Container`适配子控件的大小的方法：
 /// 使用`Container`->`ConstrainedBox`(设置最大宽)->`子控件`
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 
@@ -41,7 +42,7 @@ class ConstrainedBoxDemo extends StatelessWidget {
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，
 废话测试，废话测试，废话测试，废话测试，废话测试，废话测试，''',
-    )
+    ),
   ];
 
   @override
@@ -69,7 +70,7 @@ class ConstrainedBoxDemo extends StatelessWidget {
                       '消息来自自己',
                       Alignment.centerRight,
                     ),
-                    buildHeadImage(screenW, index)
+                    buildHeadImage(screenW, index),
                   ],
                 ),
               );

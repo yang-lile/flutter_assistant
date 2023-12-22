@@ -22,13 +22,18 @@ void main() {
     ..writeln("import 'package:flutter_assistant/entity/icons_model.dart';")
     ..writeln();
   for (final item in readAsLinesSync) {
-    if (item.startsWith('class ')) {
-      c = item.split(' ')[1];
-      stringBuffer.write('List<IconsModel> my$c = ');
-      if (item.startsWith('class Icons')) {
-        stringBuffer.writeln('const ');
-      }
-      stringBuffer.writeln('[');
+    if (item.startsWith('final class ')) {
+      c = item.split(' ')[2];
+      stringBuffer
+        ..write('List<IconsModel> my$c = ')
+        ..writeln('[');
+    }
+    if (item.startsWith('abstract final class ')) {
+      c = item.split(' ')[3];
+      stringBuffer
+        ..write('List<IconsModel> my$c = ')
+        ..write('const ')
+        ..writeln('[');
     }
     if (item.startsWith('  IconData get ')) {
       stringBuffer.writeln(

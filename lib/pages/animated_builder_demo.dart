@@ -1,5 +1,6 @@
 /// https://flutterchina.club/tutorials/animation/
 /// 这个网址展示了关于动画使用的完整示例
+library;
 import 'dart:math';
 
 import 'package:flutter/material.dart';

@@ -1,5 +1,6 @@
 /// 主要用于专场动画，
 /// 你可以直接复制粘贴FadeTransionDemoModel来修改属于你的转场动画
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

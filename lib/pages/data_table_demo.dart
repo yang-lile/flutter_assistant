@@ -1,5 +1,6 @@
 /// https://www.cnblogs.com/mengqd/p/12411952.html
 /// 上面是一篇写得不错的文档
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 
@@ -148,7 +149,7 @@ class _DataTableDemoState extends State<DataTableDemo> {
                       DataCell(Text('${datas[i].total}')),
                       DataCell(Text('${datas[i].average}')),
                     ],
-                  )
+                  ),
               ],
             ),
           ),

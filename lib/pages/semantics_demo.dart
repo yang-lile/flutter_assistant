@@ -8,6 +8,7 @@
 /// 。 这将强制`Flutter`生成叠加层以可视化语义树。
 /// 最后附上一个比较全面的链接
 /// https://juejin.im/entry/5c41490a6fb9a049b5071a63
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

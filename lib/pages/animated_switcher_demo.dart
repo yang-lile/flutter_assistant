@@ -1,6 +1,7 @@
 /// 通过这个控件我们学到了，如果要使两个控件不一样，需要设置不同key值
 /// 否则只是属性不同的两个控件树会被认为是相同的控件
 /// 动画很多，请自行百度学习`https://juejin.im/post/5d3ac928e51d454f6f16ece0`
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/entity/random_tools.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';

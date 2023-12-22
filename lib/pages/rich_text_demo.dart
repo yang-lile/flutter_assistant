@@ -33,7 +33,7 @@ class RichTextDemo extends StatelessWidget {
                   ),
                   TextSpan(
                     text: ' 另一句',
-                  )
+                  ),
                 ],
               ),
             ],

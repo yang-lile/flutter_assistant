@@ -2,6 +2,7 @@
 /// 1. 创建一个固定大小的控件
 /// 2. 通过`double.infinity`来设置最大值
 /// 3. 在简单的布局里，使用不含子控件的`SizedBox`来占位
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

@@ -28,6 +28,7 @@
 /// but it will let its child assume its own proportions.
 /// Thanks, `Align`!
 /// balabalabala...
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

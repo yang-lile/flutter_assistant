@@ -3,6 +3,7 @@
 /// ColoredBox DecoratedBox ConstrainedBox Padding Transform ClipPath
 /// 具体实现方法可以查看源码，理论上只用单组件更便于渲染，但是使用Container更便于维护
 /// 至于怎么使用，这取决于你。
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 
@@ -31,7 +32,7 @@ class ContainerDemo extends StatelessWidget {
               color: Colors.black54,
               offset: Offset(2.0, 2.0),
               blurRadius: 4.0,
-            )
+            ),
           ],
         ),
         transform: Matrix4.rotationZ(.2), //卡片倾斜变换

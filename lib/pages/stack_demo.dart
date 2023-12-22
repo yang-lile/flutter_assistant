@@ -1,4 +1,5 @@
 /// 默认居左上角，可以使用alinment属性，自定义对齐方式
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

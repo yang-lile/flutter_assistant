@@ -13,8 +13,8 @@ class AlignDemo extends StatelessWidget {
           color: Colors.orange[300],
           width: 300.0,
           height: 500.0,
-          child: Stack(
-            children: const <Widget>[
+          child: const Stack(
+            children: <Widget>[
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text('bottomLeft'),

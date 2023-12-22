@@ -1,4 +1,5 @@
 /// 相当于把Container的高宽属性提出来的一个控件，用于设置最大高宽
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/entity/random_tools.dart' show RandomTools;
 import 'package:flutter_assistant/template/my_scaffold.dart' show MyScaffold;

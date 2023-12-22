@@ -1,6 +1,7 @@
 /// https://juejin.im/entry/5d28b9505188250d3d60e4ee
 /// 虽然和本篇文章无关，但是我还是借鉴到了关于inkwell的用法
 /// 尝试把Material换成Container加颜色试试？（你会得到意料以外的结果）
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

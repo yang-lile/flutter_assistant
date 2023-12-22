@@ -15,14 +15,14 @@ class AboutDialogDemo extends StatelessWidget {
       applicationName: 'flutter assistant',
       applicationVersion: '2.0.0',
       children: [
-        Column(
-          children: const <Widget>[
+        const Column(
+          children: <Widget>[
             Text('*********'),
             Text('*********'),
             Text('*********'),
             Text('*********'),
           ],
-        )
+        ),
       ],
       applicationLegalese: 'MIT',
     );

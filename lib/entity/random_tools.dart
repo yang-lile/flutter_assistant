@@ -13,7 +13,7 @@ class RandomTools {
       Colors.green,
       Colors.cyan,
       Colors.blue,
-      Colors.purple
+      Colors.purple,
     ];
     return colors[Random().nextInt(6)];
   }

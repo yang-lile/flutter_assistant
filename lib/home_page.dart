@@ -61,7 +61,7 @@ class WidgetList extends StatelessWidget {
     final subtitles = <String>[
       'Stateless Widget',
       'Stateful Widget',
-      'introducing'
+      'introducing',
     ];
     final subtitlesIndex = <int>[
       2, // 介绍
@@ -151,7 +151,7 @@ class IconsList extends StatelessWidget {
         SliverGrid.extent(
           maxCrossAxisExtent: 64.0,
           children: [
-            for (var item in myPlatformAdaptiveIcons)
+            for (final item in myPlatformAdaptiveIcons)
               IconButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -170,7 +170,7 @@ class IconsList extends StatelessWidget {
         SliverGrid.extent(
           maxCrossAxisExtent: 64.0,
           children: [
-            for (var item in myIcons)
+            for (final item in myIcons)
               IconButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(

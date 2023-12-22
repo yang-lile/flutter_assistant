@@ -41,7 +41,7 @@ class PlaceholderDemo extends StatelessWidget {
                       );
                     },
                   ),
-                )
+                ),
               ],
             ),
           ),

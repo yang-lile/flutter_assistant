@@ -23,9 +23,9 @@ class FutureBuilderDemo extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           return Text('今天的天气是：${snapshot.data}');
         } else {
-          return Column(
+          return const Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
+            children: <Widget>[
               CircularProgressIndicator(),
               Text('在加载了在加载了...'),
             ],

@@ -83,8 +83,7 @@ class _ChildWidget2State extends State<ChildWidget2> {
 
 class DataModel extends InheritedWidget {
   const DataModel({
-    this.number,
-    required super.child,
+    required super.child, this.number,
     super.key,
   });
   final int? number;

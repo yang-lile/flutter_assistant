@@ -1,5 +1,6 @@
 /// `LayoutBuilder`是一种简单化的`MediaQuery`的封装
 /// `MediaQuery`为屏幕的适配提供了重要的参考参数
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

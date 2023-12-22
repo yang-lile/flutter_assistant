@@ -6,12 +6,12 @@ class TooltipDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyScaffold(
+    return const MyScaffold(
       appBarTitle: 'TooltipDemo',
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Tooltip(
               message: 'Icons.compare',
               child: Icon(Icons.compare),

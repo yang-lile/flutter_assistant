@@ -1,5 +1,6 @@
 /// 视频中演示了Opacity，十分简单，设置opacity为0即可
 /// 我们来实现AnimatedOpacity
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

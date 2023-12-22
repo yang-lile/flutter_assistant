@@ -56,7 +56,7 @@ class ExpandedDemo extends StatelessWidget {
                     height: 50,
                     color: Colors.yellow[500],
                   ),
-                )
+                ),
               ],
             ),
           ],

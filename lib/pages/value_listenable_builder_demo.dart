@@ -2,6 +2,7 @@
 /// 奇怪的性能提升了！！！
 /// https://juejin.im/post/5ced2f62e51d454fd8057b18#heading-3
 /// 网址提供了自定义`ValueNotifier`的方法，可以局部更新对象的数据
+library;
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -12,14 +13,14 @@ class ValueListenableBuilderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _valueNotifier = ValueNotifier<int>(0);
-    final _random = Random();
+    final valueNotifier = ValueNotifier<int>(0);
+    final random = Random();
 
     return MyScaffold(
       appBarTitle: 'ValueListenableBuilderDemo',
       body: Center(
         child: ValueListenableBuilder(
-          valueListenable: _valueNotifier,
+          valueListenable: valueNotifier,
           builder: (BuildContext context, dynamic value, Widget? child) {
             return Table(
               children: [
@@ -54,7 +55,7 @@ class ValueListenableBuilderDemo extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.refresh),
-        onPressed: () => _valueNotifier.value = _random.nextInt(9999),
+        onPressed: () => valueNotifier.value = random.nextInt(9999),
       ),
     );
   }

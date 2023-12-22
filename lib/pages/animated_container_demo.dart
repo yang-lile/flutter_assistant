@@ -27,6 +27,7 @@
 /// 动画时长可以使用duration来控制
 /// 你也可以指定一个非线性的自定义效果。
 /// 这就是balabalabala。。。
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

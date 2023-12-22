@@ -30,7 +30,7 @@ class ListViewDemo extends StatelessWidget {
                         color: RandomTools.randomColors(),
                         child: Text('data$i'),
                       ),
-                    )
+                    ),
                 ],
               ),
             ),

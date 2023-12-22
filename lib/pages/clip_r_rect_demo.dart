@@ -1,6 +1,7 @@
 /// 由本控件和上一个控件的使用，我们可以了解到有部分的控件是一个抽象类
 /// 需要我们继承来实现具体效果，本例展示了五角星绘制
 /// _StarCliper类来自互联网
+library;
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

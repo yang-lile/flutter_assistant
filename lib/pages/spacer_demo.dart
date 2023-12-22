@@ -1,4 +1,5 @@
 /// 如果说`Flexible`是用来调节子控件之间的占比
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

@@ -3,7 +3,7 @@
 /// 同时我希望你能在开发的时候使用`Scoffold`来包装一层，
 /// 否则子组件的背景将会是黑色。
 /// 这是一套值得琢磨的组件，因为它的效果真的amazing
-import 'dart:developer';
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';

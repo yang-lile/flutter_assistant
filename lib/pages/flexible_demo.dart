@@ -1,5 +1,6 @@
 /// flexible这个控件其实类似于原生安卓里的weight比重
 /// 或许有更好的使用方式，而不只是控件
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 
@@ -31,7 +32,7 @@ class FlexibleDemo extends StatelessWidget {
             child: ColoredBox(
               color: Colors.green.shade400,
             ),
-          )
+          ),
         ],
       ),
     );

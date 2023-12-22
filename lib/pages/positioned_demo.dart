@@ -13,9 +13,9 @@ class PositionedDemo extends StatelessWidget {
           alignment: Alignment.center,
           width: 100,
           height: 100,
-          child: Stack(
+          child: const Stack(
             alignment: Alignment.center,
-            children: const <Widget>[
+            children: <Widget>[
               Positioned(
                 top: 0.0,
                 child: Icon(

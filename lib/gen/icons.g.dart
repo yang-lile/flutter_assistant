@@ -83,8 +83,7 @@ List<IconsModel> myPlatformAdaptiveIcons = [
     Icons.adaptive.share_sharp,
   ),
 ];
-List<IconsModel> myIcons = const 
-[
+List<IconsModel> myIcons = const [
   IconsModel(
     'Icons.ten_k',
     Icons.ten_k,
@@ -2906,6 +2905,22 @@ List<IconsModel> myIcons = const
     Icons.arrow_left_outlined,
   ),
   IconsModel(
+    'Icons.arrow_outward',
+    Icons.arrow_outward,
+  ),
+  IconsModel(
+    'Icons.arrow_outward_sharp',
+    Icons.arrow_outward_sharp,
+  ),
+  IconsModel(
+    'Icons.arrow_outward_rounded',
+    Icons.arrow_outward_rounded,
+  ),
+  IconsModel(
+    'Icons.arrow_outward_outlined',
+    Icons.arrow_outward_outlined,
+  ),
+  IconsModel(
     'Icons.arrow_right',
     Icons.arrow_right,
   ),
@@ -3034,6 +3049,10 @@ List<IconsModel> myIcons = const
     Icons.assignment_outlined,
   ),
   IconsModel(
+    'Icons.assignment_add',
+    Icons.assignment_add,
+  ),
+  IconsModel(
     'Icons.assignment_ind',
     Icons.assignment_ind,
   ),
@@ -3112,6 +3131,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.assignment_turned_in_outlined',
     Icons.assignment_turned_in_outlined,
+  ),
+  IconsModel(
+    'Icons.assist_walker',
+    Icons.assist_walker,
+  ),
+  IconsModel(
+    'Icons.assist_walker_sharp',
+    Icons.assist_walker_sharp,
+  ),
+  IconsModel(
+    'Icons.assist_walker_rounded',
+    Icons.assist_walker_rounded,
+  ),
+  IconsModel(
+    'Icons.assist_walker_outlined',
+    Icons.assist_walker_outlined,
   ),
   IconsModel(
     'Icons.assistant',
@@ -3726,6 +3761,10 @@ List<IconsModel> myIcons = const
     Icons.bar_chart_outlined,
   ),
   IconsModel(
+    'Icons.barcode_reader',
+    Icons.barcode_reader,
+  ),
+  IconsModel(
     'Icons.batch_prediction',
     Icons.batch_prediction,
   ),
@@ -4172,6 +4211,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.blender_outlined',
     Icons.blender_outlined,
+  ),
+  IconsModel(
+    'Icons.blind',
+    Icons.blind,
+  ),
+  IconsModel(
+    'Icons.blind_sharp',
+    Icons.blind_sharp,
+  ),
+  IconsModel(
+    'Icons.blind_rounded',
+    Icons.blind_rounded,
+  ),
+  IconsModel(
+    'Icons.blind_outlined',
+    Icons.blind_outlined,
   ),
   IconsModel(
     'Icons.blinds',
@@ -7222,6 +7277,22 @@ List<IconsModel> myIcons = const
     Icons.construction_outlined,
   ),
   IconsModel(
+    'Icons.contact_emergency',
+    Icons.contact_emergency,
+  ),
+  IconsModel(
+    'Icons.contact_emergency_sharp',
+    Icons.contact_emergency_sharp,
+  ),
+  IconsModel(
+    'Icons.contact_emergency_rounded',
+    Icons.contact_emergency_rounded,
+  ),
+  IconsModel(
+    'Icons.contact_emergency_outlined',
+    Icons.contact_emergency_outlined,
+  ),
+  IconsModel(
     'Icons.contact_mail',
     Icons.contact_mail,
   ),
@@ -7476,6 +7547,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.control_point_duplicate_outlined',
     Icons.control_point_duplicate_outlined,
+  ),
+  IconsModel(
+    'Icons.conveyor_belt',
+    Icons.conveyor_belt,
   ),
   IconsModel(
     'Icons.cookie',
@@ -8838,6 +8913,10 @@ List<IconsModel> myIcons = const
     Icons.devices_other_outlined,
   ),
   IconsModel(
+    'Icons.dew_point',
+    Icons.dew_point,
+  ),
+  IconsModel(
     'Icons.dialer_sip',
     Icons.dialer_sip,
   ),
@@ -9348,6 +9427,54 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.display_settings_outlined',
     Icons.display_settings_outlined,
+  ),
+  IconsModel(
+    'Icons.diversity_1',
+    Icons.diversity_1,
+  ),
+  IconsModel(
+    'Icons.diversity_1_sharp',
+    Icons.diversity_1_sharp,
+  ),
+  IconsModel(
+    'Icons.diversity_1_rounded',
+    Icons.diversity_1_rounded,
+  ),
+  IconsModel(
+    'Icons.diversity_1_outlined',
+    Icons.diversity_1_outlined,
+  ),
+  IconsModel(
+    'Icons.diversity_2',
+    Icons.diversity_2,
+  ),
+  IconsModel(
+    'Icons.diversity_2_sharp',
+    Icons.diversity_2_sharp,
+  ),
+  IconsModel(
+    'Icons.diversity_2_rounded',
+    Icons.diversity_2_rounded,
+  ),
+  IconsModel(
+    'Icons.diversity_2_outlined',
+    Icons.diversity_2_outlined,
+  ),
+  IconsModel(
+    'Icons.diversity_3',
+    Icons.diversity_3,
+  ),
+  IconsModel(
+    'Icons.diversity_3_sharp',
+    Icons.diversity_3_sharp,
+  ),
+  IconsModel(
+    'Icons.diversity_3_rounded',
+    Icons.diversity_3_rounded,
+  ),
+  IconsModel(
+    'Icons.diversity_3_outlined',
+    Icons.diversity_3_outlined,
   ),
   IconsModel(
     'Icons.dnd_forwardslash',
@@ -10298,6 +10425,10 @@ List<IconsModel> myIcons = const
     Icons.edit_calendar_outlined,
   ),
   IconsModel(
+    'Icons.edit_document',
+    Icons.edit_document,
+  ),
+  IconsModel(
     'Icons.edit_location',
     Icons.edit_location,
   ),
@@ -10392,6 +10523,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.edit_road_outlined',
     Icons.edit_road_outlined,
+  ),
+  IconsModel(
+    'Icons.edit_square',
+    Icons.edit_square,
   ),
   IconsModel(
     'Icons.egg',
@@ -11418,6 +11553,86 @@ List<IconsModel> myIcons = const
     Icons.face_outlined,
   ),
   IconsModel(
+    'Icons.face_2',
+    Icons.face_2,
+  ),
+  IconsModel(
+    'Icons.face_2_sharp',
+    Icons.face_2_sharp,
+  ),
+  IconsModel(
+    'Icons.face_2_rounded',
+    Icons.face_2_rounded,
+  ),
+  IconsModel(
+    'Icons.face_2_outlined',
+    Icons.face_2_outlined,
+  ),
+  IconsModel(
+    'Icons.face_3',
+    Icons.face_3,
+  ),
+  IconsModel(
+    'Icons.face_3_sharp',
+    Icons.face_3_sharp,
+  ),
+  IconsModel(
+    'Icons.face_3_rounded',
+    Icons.face_3_rounded,
+  ),
+  IconsModel(
+    'Icons.face_3_outlined',
+    Icons.face_3_outlined,
+  ),
+  IconsModel(
+    'Icons.face_4',
+    Icons.face_4,
+  ),
+  IconsModel(
+    'Icons.face_4_sharp',
+    Icons.face_4_sharp,
+  ),
+  IconsModel(
+    'Icons.face_4_rounded',
+    Icons.face_4_rounded,
+  ),
+  IconsModel(
+    'Icons.face_4_outlined',
+    Icons.face_4_outlined,
+  ),
+  IconsModel(
+    'Icons.face_5',
+    Icons.face_5,
+  ),
+  IconsModel(
+    'Icons.face_5_sharp',
+    Icons.face_5_sharp,
+  ),
+  IconsModel(
+    'Icons.face_5_rounded',
+    Icons.face_5_rounded,
+  ),
+  IconsModel(
+    'Icons.face_5_outlined',
+    Icons.face_5_outlined,
+  ),
+  IconsModel(
+    'Icons.face_6',
+    Icons.face_6,
+  ),
+  IconsModel(
+    'Icons.face_6_sharp',
+    Icons.face_6_sharp,
+  ),
+  IconsModel(
+    'Icons.face_6_rounded',
+    Icons.face_6_rounded,
+  ),
+  IconsModel(
+    'Icons.face_6_outlined',
+    Icons.face_6_outlined,
+  ),
+  IconsModel(
     'Icons.face_retouching_natural',
     Icons.face_retouching_natural,
   ),
@@ -11940,6 +12155,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.file_upload_outlined',
     Icons.file_upload_outlined,
+  ),
+  IconsModel(
+    'Icons.file_upload_off',
+    Icons.file_upload_off,
   ),
   IconsModel(
     'Icons.filter',
@@ -12830,6 +13049,22 @@ List<IconsModel> myIcons = const
     Icons.flourescent_outlined,
   ),
   IconsModel(
+    'Icons.fluorescent',
+    Icons.fluorescent,
+  ),
+  IconsModel(
+    'Icons.fluorescent_sharp',
+    Icons.fluorescent_sharp,
+  ),
+  IconsModel(
+    'Icons.fluorescent_rounded',
+    Icons.fluorescent_rounded,
+  ),
+  IconsModel(
+    'Icons.fluorescent_outlined',
+    Icons.fluorescent_outlined,
+  ),
+  IconsModel(
     'Icons.flutter_dash',
     Icons.flutter_dash,
   ),
@@ -13122,6 +13357,10 @@ List<IconsModel> myIcons = const
     Icons.fork_right_outlined,
   ),
   IconsModel(
+    'Icons.forklift',
+    Icons.forklift,
+  ),
+  IconsModel(
     'Icons.format_align_center',
     Icons.format_align_center,
   ),
@@ -13344,6 +13583,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.format_list_bulleted_outlined',
     Icons.format_list_bulleted_outlined,
+  ),
+  IconsModel(
+    'Icons.format_list_bulleted_add',
+    Icons.format_list_bulleted_add,
   ),
   IconsModel(
     'Icons.format_list_numbered',
@@ -13712,6 +13955,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.front_hand_outlined',
     Icons.front_hand_outlined,
+  ),
+  IconsModel(
+    'Icons.front_loader',
+    Icons.front_loader,
   ),
   IconsModel(
     'Icons.fullscreen',
@@ -14384,6 +14631,38 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.groups_outlined',
     Icons.groups_outlined,
+  ),
+  IconsModel(
+    'Icons.groups_2',
+    Icons.groups_2,
+  ),
+  IconsModel(
+    'Icons.groups_2_sharp',
+    Icons.groups_2_sharp,
+  ),
+  IconsModel(
+    'Icons.groups_2_rounded',
+    Icons.groups_2_rounded,
+  ),
+  IconsModel(
+    'Icons.groups_2_outlined',
+    Icons.groups_2_outlined,
+  ),
+  IconsModel(
+    'Icons.groups_3',
+    Icons.groups_3,
+  ),
+  IconsModel(
+    'Icons.groups_3_sharp',
+    Icons.groups_3_sharp,
+  ),
+  IconsModel(
+    'Icons.groups_3_rounded',
+    Icons.groups_3_rounded,
+  ),
+  IconsModel(
+    'Icons.groups_3_outlined',
+    Icons.groups_3_outlined,
   ),
   IconsModel(
     'Icons.h_mobiledata',
@@ -18482,6 +18761,22 @@ List<IconsModel> myIcons = const
     Icons.lyrics_outlined,
   ),
   IconsModel(
+    'Icons.macro_off',
+    Icons.macro_off,
+  ),
+  IconsModel(
+    'Icons.macro_off_sharp',
+    Icons.macro_off_sharp,
+  ),
+  IconsModel(
+    'Icons.macro_off_rounded',
+    Icons.macro_off_rounded,
+  ),
+  IconsModel(
+    'Icons.macro_off_outlined',
+    Icons.macro_off_outlined,
+  ),
+  IconsModel(
     'Icons.mail',
     Icons.mail,
   ),
@@ -18560,6 +18855,54 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.man_outlined',
     Icons.man_outlined,
+  ),
+  IconsModel(
+    'Icons.man_2',
+    Icons.man_2,
+  ),
+  IconsModel(
+    'Icons.man_2_sharp',
+    Icons.man_2_sharp,
+  ),
+  IconsModel(
+    'Icons.man_2_rounded',
+    Icons.man_2_rounded,
+  ),
+  IconsModel(
+    'Icons.man_2_outlined',
+    Icons.man_2_outlined,
+  ),
+  IconsModel(
+    'Icons.man_3',
+    Icons.man_3,
+  ),
+  IconsModel(
+    'Icons.man_3_sharp',
+    Icons.man_3_sharp,
+  ),
+  IconsModel(
+    'Icons.man_3_rounded',
+    Icons.man_3_rounded,
+  ),
+  IconsModel(
+    'Icons.man_3_outlined',
+    Icons.man_3_outlined,
+  ),
+  IconsModel(
+    'Icons.man_4',
+    Icons.man_4,
+  ),
+  IconsModel(
+    'Icons.man_4_sharp',
+    Icons.man_4_sharp,
+  ),
+  IconsModel(
+    'Icons.man_4_rounded',
+    Icons.man_4_rounded,
+  ),
+  IconsModel(
+    'Icons.man_4_outlined',
+    Icons.man_4_outlined,
   ),
   IconsModel(
     'Icons.manage_accounts',
@@ -19952,6 +20295,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.movie_creation_outlined',
     Icons.movie_creation_outlined,
+  ),
+  IconsModel(
+    'Icons.movie_edit',
+    Icons.movie_edit,
   ),
   IconsModel(
     'Icons.movie_filter',
@@ -21754,6 +22101,10 @@ List<IconsModel> myIcons = const
     Icons.palette_outlined,
   ),
   IconsModel(
+    'Icons.pallet',
+    Icons.pallet,
+  ),
+  IconsModel(
     'Icons.pan_tool',
     Icons.pan_tool,
   ),
@@ -22488,6 +22839,54 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.person_outlined',
     Icons.person_outlined,
+  ),
+  IconsModel(
+    'Icons.person_2',
+    Icons.person_2,
+  ),
+  IconsModel(
+    'Icons.person_2_sharp',
+    Icons.person_2_sharp,
+  ),
+  IconsModel(
+    'Icons.person_2_rounded',
+    Icons.person_2_rounded,
+  ),
+  IconsModel(
+    'Icons.person_2_outlined',
+    Icons.person_2_outlined,
+  ),
+  IconsModel(
+    'Icons.person_3',
+    Icons.person_3,
+  ),
+  IconsModel(
+    'Icons.person_3_sharp',
+    Icons.person_3_sharp,
+  ),
+  IconsModel(
+    'Icons.person_3_rounded',
+    Icons.person_3_rounded,
+  ),
+  IconsModel(
+    'Icons.person_3_outlined',
+    Icons.person_3_outlined,
+  ),
+  IconsModel(
+    'Icons.person_4',
+    Icons.person_4,
+  ),
+  IconsModel(
+    'Icons.person_4_sharp',
+    Icons.person_4_sharp,
+  ),
+  IconsModel(
+    'Icons.person_4_rounded',
+    Icons.person_4_rounded,
+  ),
+  IconsModel(
+    'Icons.person_4_outlined',
+    Icons.person_4_outlined,
   ),
   IconsModel(
     'Icons.person_add',
@@ -24198,6 +24597,22 @@ List<IconsModel> myIcons = const
     Icons.psychology_outlined,
   ),
   IconsModel(
+    'Icons.psychology_alt',
+    Icons.psychology_alt,
+  ),
+  IconsModel(
+    'Icons.psychology_alt_sharp',
+    Icons.psychology_alt_sharp,
+  ),
+  IconsModel(
+    'Icons.psychology_alt_rounded',
+    Icons.psychology_alt_rounded,
+  ),
+  IconsModel(
+    'Icons.psychology_alt_outlined',
+    Icons.psychology_alt_outlined,
+  ),
+  IconsModel(
     'Icons.public',
     Icons.public,
   ),
@@ -24790,6 +25205,10 @@ List<IconsModel> myIcons = const
     Icons.real_estate_agent_outlined,
   ),
   IconsModel(
+    'Icons.rebase_edit',
+    Icons.rebase_edit,
+  ),
+  IconsModel(
     'Icons.receipt',
     Icons.receipt,
   ),
@@ -25156,6 +25575,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.reorder_outlined',
     Icons.reorder_outlined,
+  ),
+  IconsModel(
+    'Icons.repartition',
+    Icons.repartition,
+  ),
+  IconsModel(
+    'Icons.repartition_sharp',
+    Icons.repartition_sharp,
+  ),
+  IconsModel(
+    'Icons.repartition_rounded',
+    Icons.repartition_rounded,
+  ),
+  IconsModel(
+    'Icons.repartition_outlined',
+    Icons.repartition_outlined,
   ),
   IconsModel(
     'Icons.repeat',
@@ -27350,6 +27785,22 @@ List<IconsModel> myIcons = const
     Icons.severe_cold_outlined,
   ),
   IconsModel(
+    'Icons.shape_line',
+    Icons.shape_line,
+  ),
+  IconsModel(
+    'Icons.shape_line_sharp',
+    Icons.shape_line_sharp,
+  ),
+  IconsModel(
+    'Icons.shape_line_rounded',
+    Icons.shape_line_rounded,
+  ),
+  IconsModel(
+    'Icons.shape_line_outlined',
+    Icons.shape_line_outlined,
+  ),
+  IconsModel(
     'Icons.share',
     Icons.share,
   ),
@@ -27396,6 +27847,10 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.share_location_outlined',
     Icons.share_location_outlined,
+  ),
+  IconsModel(
+    'Icons.shelves',
+    Icons.shelves,
   ),
   IconsModel(
     'Icons.shield',
@@ -32034,6 +32489,10 @@ List<IconsModel> myIcons = const
     Icons.trip_origin_outlined,
   ),
   IconsModel(
+    'Icons.trolley',
+    Icons.trolley,
+  ),
+  IconsModel(
     'Icons.troubleshoot',
     Icons.troubleshoot,
   ),
@@ -32418,6 +32877,22 @@ List<IconsModel> myIcons = const
     Icons.unfold_less_outlined,
   ),
   IconsModel(
+    'Icons.unfold_less_double',
+    Icons.unfold_less_double,
+  ),
+  IconsModel(
+    'Icons.unfold_less_double_sharp',
+    Icons.unfold_less_double_sharp,
+  ),
+  IconsModel(
+    'Icons.unfold_less_double_rounded',
+    Icons.unfold_less_double_rounded,
+  ),
+  IconsModel(
+    'Icons.unfold_less_double_outlined',
+    Icons.unfold_less_double_outlined,
+  ),
+  IconsModel(
     'Icons.unfold_more',
     Icons.unfold_more,
   ),
@@ -32432,6 +32907,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.unfold_more_outlined',
     Icons.unfold_more_outlined,
+  ),
+  IconsModel(
+    'Icons.unfold_more_double',
+    Icons.unfold_more_double,
+  ),
+  IconsModel(
+    'Icons.unfold_more_double_sharp',
+    Icons.unfold_more_double_sharp,
+  ),
+  IconsModel(
+    'Icons.unfold_more_double_rounded',
+    Icons.unfold_more_double_rounded,
+  ),
+  IconsModel(
+    'Icons.unfold_more_double_outlined',
+    Icons.unfold_more_double_outlined,
   ),
   IconsModel(
     'Icons.unpublished',
@@ -32848,6 +33339,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.video_camera_front_outlined',
     Icons.video_camera_front_outlined,
+  ),
+  IconsModel(
+    'Icons.video_chat',
+    Icons.video_chat,
+  ),
+  IconsModel(
+    'Icons.video_chat_sharp',
+    Icons.video_chat_sharp,
+  ),
+  IconsModel(
+    'Icons.video_chat_rounded',
+    Icons.video_chat_rounded,
+  ),
+  IconsModel(
+    'Icons.video_chat_outlined',
+    Icons.video_chat_outlined,
   ),
   IconsModel(
     'Icons.video_collection',
@@ -34094,6 +34601,18 @@ List<IconsModel> myIcons = const
     Icons.web_stories,
   ),
   IconsModel(
+    'Icons.web_stories_sharp',
+    Icons.web_stories_sharp,
+  ),
+  IconsModel(
+    'Icons.web_stories_rounded',
+    Icons.web_stories_rounded,
+  ),
+  IconsModel(
+    'Icons.web_stories_outlined',
+    Icons.web_stories_outlined,
+  ),
+  IconsModel(
     'Icons.webhook',
     Icons.webhook,
   ),
@@ -34156,22 +34675,6 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.west_outlined',
     Icons.west_outlined,
-  ),
-  IconsModel(
-    'Icons.whatsapp',
-    Icons.whatsapp,
-  ),
-  IconsModel(
-    'Icons.whatsapp_sharp',
-    Icons.whatsapp_sharp,
-  ),
-  IconsModel(
-    'Icons.whatsapp_rounded',
-    Icons.whatsapp_rounded,
-  ),
-  IconsModel(
-    'Icons.whatsapp_outlined',
-    Icons.whatsapp_outlined,
   ),
   IconsModel(
     'Icons.whatshot',
@@ -34584,6 +35087,22 @@ List<IconsModel> myIcons = const
   IconsModel(
     'Icons.woman_outlined',
     Icons.woman_outlined,
+  ),
+  IconsModel(
+    'Icons.woman_2',
+    Icons.woman_2,
+  ),
+  IconsModel(
+    'Icons.woman_2_sharp',
+    Icons.woman_2_sharp,
+  ),
+  IconsModel(
+    'Icons.woman_2_rounded',
+    Icons.woman_2_rounded,
+  ),
+  IconsModel(
+    'Icons.woman_2_outlined',
+    Icons.woman_2_outlined,
   ),
   IconsModel(
     'Icons.woo_commerce',

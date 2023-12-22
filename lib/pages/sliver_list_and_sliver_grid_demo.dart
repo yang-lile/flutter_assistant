@@ -1,6 +1,7 @@
 /// https://juejin.im/post/5bceb534e51d457aa4596f9a#heading-3
 /// 一个写的比较好的教程
 /// bug: 滑动到底部无边界，继续滚动
+library;
 import 'package:flutter/material.dart';
 import 'package:flutter_assistant/template/my_scaffold.dart';
 

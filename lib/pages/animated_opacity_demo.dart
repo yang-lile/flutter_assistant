@@ -52,7 +52,7 @@ class __TableWaveState extends State<_TableWave> {
                         ),
                       ),
                     ),
-                  )
+                  ),
               ],
             ),
         ],

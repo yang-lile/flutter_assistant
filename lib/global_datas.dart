@@ -4,7 +4,7 @@ GlobalDatas? globalDatas;
 
 class GlobalDatas extends InheritedModel<TextStyle> {
   const GlobalDatas({
-    this.baseStyle,
+    required super.child, this.baseStyle,
     this.numberStyle,
     this.commentStyle,
     this.keywordStyle,
@@ -12,7 +12,6 @@ class GlobalDatas extends InheritedModel<TextStyle> {
     this.punctuationStyle,
     this.classStyle,
     this.constantStyle,
-    required super.child,
     super.key,
   });
   final TextStyle? baseStyle;

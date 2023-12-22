@@ -78,8 +78,7 @@ class _MyScaffoldState extends State<MyScaffold> {
 
 class SourceCodePage extends StatelessWidget {
   const SourceCodePage({
-    super.key,
-    required this.title,
+    required this.title, super.key,
   });
   final String title;
 
@@ -129,25 +128,25 @@ class SourceCodePage extends StatelessWidget {
   }
 
   Future<List<TextSpan>> _showCode() async {
-    var _s = '${title[0].toLowerCase()}${title.substring(1)}';
+    var s = '${title[0].toLowerCase()}${title.substring(1)}';
     for (var i = 1; i < title.length; i++) {
-      if (_s[i].contains(RegExp('[A-Z]'))) {
-        _s = _s.replaceRange(i, i + 1, '_${_s[i].toLowerCase()}');
+      if (s[i].contains(RegExp('[A-Z]'))) {
+        s = s.replaceRange(i, i + 1, '_${s[i].toLowerCase()}');
       }
     }
-    final _string = 'lib/pages/$_s.dart';
-    final content = await rootBundle.loadString(_string);
-    final _codes = content.split('\n');
-    final _spanedCodes = <TextSpan>[];
-    for (final _code in _codes) {
-      _spanedCodes
-        ..addAll(DartSyntaxPrehighlighter().format(_code))
+    final string = 'lib/pages/$s.dart';
+    final content = await rootBundle.loadString(string);
+    final codes = content.split('\n');
+    final spanedCodes = <TextSpan>[];
+    for (final code in codes) {
+      spanedCodes
+        ..addAll(DartSyntaxPrehighlighter().format(code))
         ..add(
           const TextSpan(
             text: '\n',
           ),
         );
     }
-    return _spanedCodes;
+    return spanedCodes;
   }
 }

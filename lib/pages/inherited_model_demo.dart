@@ -4,6 +4,7 @@
 ///
 /// 当然，现在我们使用各种状态管理插件
 /// 而不再使用这一套操作，所以`InheritedModel`也可以只做了解
+library;
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -110,9 +111,8 @@ class _ChildWidget2State extends State<ChildWidget2> {
 /// `InheritedModel`后的类型，和`updateShouldNotifyDependent`中的`dependencies`的类型一致
 class DataModel extends InheritedModel<int> {
   const DataModel({
-    this.number1,
+    required super.child, this.number1,
     this.number2,
-    required super.child,
     super.key,
   });
   final int? number1;

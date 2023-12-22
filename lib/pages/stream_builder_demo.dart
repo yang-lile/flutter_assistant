@@ -8,15 +8,15 @@ class StreamBuilderDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textDataController = StreamController<int>();
-    final _textData = _textDataController.stream;
+    final textDataController = StreamController<int>();
+    final textData = textDataController.stream;
     return MyScaffold(
       appBarTitle: 'StreamBuilderDemo',
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           StreamBuilder<int>(
-            stream: _textData,
+            stream: textData,
             builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
               if (snapshot.connectionState == ConnectionState.none) {
                 return const Text('空');
@@ -28,20 +28,20 @@ class StreamBuilderDemo extends StatelessWidget {
             children: [
               TableRow(
                 children: [
-                  _buildRaisedButton(1, _textDataController),
-                  _buildRaisedButton(2, _textDataController),
-                  _buildRaisedButton(3, _textDataController),
-                  _buildRaisedButton(4, _textDataController),
-                  _buildRaisedButton(5, _textDataController),
+                  _buildRaisedButton(1, textDataController),
+                  _buildRaisedButton(2, textDataController),
+                  _buildRaisedButton(3, textDataController),
+                  _buildRaisedButton(4, textDataController),
+                  _buildRaisedButton(5, textDataController),
                 ],
               ),
               TableRow(
                 children: [
-                  _buildRaisedButton(6, _textDataController),
-                  _buildRaisedButton(7, _textDataController),
-                  _buildRaisedButton(8, _textDataController),
-                  _buildRaisedButton(9, _textDataController),
-                  _buildRaisedButton(10, _textDataController),
+                  _buildRaisedButton(6, textDataController),
+                  _buildRaisedButton(7, textDataController),
+                  _buildRaisedButton(8, textDataController),
+                  _buildRaisedButton(9, textDataController),
+                  _buildRaisedButton(10, textDataController),
                 ],
               ),
             ],
@@ -53,12 +53,12 @@ class StreamBuilderDemo extends StatelessWidget {
 
   Padding _buildRaisedButton(
     int i,
-    StreamController<int> _textDataController,
+    StreamController<int> textDataController,
   ) =>
       Padding(
         padding: const EdgeInsets.all(10.0),
         child: ElevatedButton(
-          onPressed: () => _textDataController.add(i),
+          onPressed: () => textDataController.add(i),
           child: Text('$i'),
         ),
       );
